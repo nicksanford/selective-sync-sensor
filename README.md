@@ -1,4 +1,4 @@
-# Selective Sync Sensor
+# Nick Selective Sync Sensor
 
 ### Build:
 ```
@@ -13,7 +13,7 @@ make
       "name": "selective",
       "namespace": "rdk",
       "type": "sensor",
-      "model": "ncs:sensor:selective",
+      "model": "ncs:sensor:nick-selective-sync-sensor",
       "attributes": {"sync": true}
     }
   ],
@@ -36,7 +36,7 @@ make
     {
       "type": "local",
       "name": "selectivesensor",
-      "executable_path": "/home/user/selective"
+      "executable_path": "/home/user/nick_selective_sync_sensor"
     }
   ]
 }

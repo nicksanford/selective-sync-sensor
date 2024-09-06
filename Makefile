@@ -1,5 +1,17 @@
+.PHONY: all module
+EXE_NAME := nick_selective_sync_sensor
+
 all:
-	rm -rf bin
-	GOOS=darwin GOARCH=arm64 go build -o bin/darwin-arm64/selective
-	GOOS=linux GOARCH=arm64 go build -o bin/linux-arm64/selective
-	GOOS=linux GOARCH=amd64 go build -o bin/linux-amd64/selective
+	GOOS=darwin GOARCH=arm64 go build -o bin/darwin-arm64/$(EXE_NAME)
+	GOOS=linux GOARCH=arm64 go build -o bin/linux-arm64/$(EXE_NAME)
+	GOOS=linux GOARCH=amd64 go build -o bin/linux-amd64/$(EXE_NAME)
+
+
+module:
+	rm -rf module.tar.gz
+	go build -o bin/$(EXE_NAME)
+	tar czf module.tar.gz bin/$(EXE_NAME)
+	rm bin/$(EXE_NAME)
+
+clean:
+	rm -rf bin module.tar.gz
